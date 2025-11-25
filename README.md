@@ -1,6 +1,6 @@
 # Coding Agent Content
 
-A single repo for all your global coding agent configurations. Add your files here and run the script to symlink them to the proper locations. Currently supports Claude Code and Codex.
+A single repo for all global coding agent configurations. Add/modify files here and run the script to symlink them to the proper locations. Currently supports Claude Code and Codex.
 
 ## What Gets Linked
 
@@ -8,7 +8,7 @@ A single repo for all your global coding agent configurations. Add your files he
 - **Instructions** (`CLAUDE.md` / `AGENTS.md`) → `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`
 - **Skills** (`skills/`) → `~/.claude/skills`
 
-Note that the `anthropic-skills` repo is included as a submodule. This allows selectively linking only specific skills (configured in `ANTHROPIC_SKILLS_TO_LINK` in the script) rather than installing all of them via the plugin; I only use skill-creator.
+The `skill-creator` skill was cloned from [anthropics/skills](https://github.com/anthropics/skills.git) and modified for local use (removed packaging-related scripts + documentation). The `.upstream` file in the skill directory tracks the original source.
 
 ## Setup
 
