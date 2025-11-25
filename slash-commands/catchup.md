@@ -1,13 +1,22 @@
 ---
 description: Catch up on recent changes
+argument-hint: [target-branch]
 ---
 
-Understand what active (uncommitted) work has been done in the current branch.
+Understand changes in the current branch.
 
-## Git commands to use
+- If `$1` is provided: Compare all changes (committed + uncommitted) against that branch
+- If `$1` is empty: Show only uncommitted work
 
-1. `git status --short` - See overview of changed/staged/untracked files
+## If target branch provided ($1 is not empty)
+1. `git diff $1 --stat` - Overview of all changes vs target branch
+2. `git diff $1 --diff-filter=M` - View diffs for modified files
+3. `git diff $1 --diff-filter=D --name-only` - List deleted files
+4. `git diff $1 --diff-filter=A --name-only` - List added files, then read them directly
+
+## If no target branch (uncommitted changes only)
+1. `git status --short` - Overview of changed/staged/untracked files
 2. `git diff --diff-filter=M` - View diffs for modified files only
-3. `git diff --diff-filter=D --name-only` - List deleted files (just names)
+3. `git diff --diff-filter=D --name-only` - List deleted files
 4. For new/untracked files shown in status, read them directly
 5. (Optional) To see contents of a crucial deleted file: `git show HEAD:path/to/file`
