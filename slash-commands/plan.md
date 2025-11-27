@@ -3,10 +3,18 @@ description: Guidelines for generating a plan before making changes
 ---
 
 # Plan Style Guidelines
+Plans should be saved as .md files.
 
-- **Lead with intent.** Start every plan with a 1–2 sentence summary explaining the goal and how the pieces fit together.
-- **Organize by subsystem.** Use `##` for top-level areas (Backend, API Client, etc.) and `###` for specific files within each area. List concrete actions under each heading.
-- **Reference paths explicitly.** Always include the full relative path (e.g., ``ios-app/KindleAudioApp/APIClient.swift``) so engineers know exactly where edits go.
-- **Describe code, not prose.** Focus on what functions, structs, and routes need to exist, including signatures and important fields. Skip status updates, effort estimates, or vague statements.
-- **Keep responsibilities narrow.** Favor small helpers (like coordinators or schedulers) instead of piling logic into massive files. Mention ownership boundaries to reinforce the intent.
-- **End-to-end flow.** Ensure the plan tells a complete story from backend through frontend, highlighting how data moves and which steps depend on previous ones.
+## Structure
+Start every plan with a 1–2 sentence summary explaining the goal and how the pieces fit together.
+
+Then, organize and order changes into testable steps:
+- Use `##` for each verifiable step and `###` for specific files to be edited/created within that step.
+- For each file, always include the full relative path and lay out function signatures / data structures but otherwise keep it minimal; don't pre-do the work of writing all the code
+- At the end of each step, describe what verification should be performed.
+
+## Other Guidelines
+- Not every user request needs to be broken down into multiple H2-level steps.
+- One file can have different edits in different steps; the important part is the order/dependency and verifiability. 
+- Do NOT include fluff about effort, next steps, or "feature summaries". Stick to the structure outlined above.
+- Ask the user clarifying questions before you actually create the plan.
