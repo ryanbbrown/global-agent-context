@@ -13,4 +13,5 @@
 
 ## Other
 - Use uv for all python-related operations; `uv add` to install new packages, and `uv run file.py` to run files. No need to activate the venv first.
+- When committing, follow conventional commits (`fix:`, `feat:`, `chore:`, `ci:`, `docs:`, `refactor:`, `test:`). A scope may added in parentheses for additional context (e.g. `feat(parser):` ). Commit messages should be a single sentence and relatively concise.
 
