@@ -12,6 +12,9 @@
 - ALWAYS use existing libraries and utility functions; do NOT rewrite functions for basic language functionality
 
 ## Other
+- Claude is almost always running inside tmux. References to "window" mean a tmux window, with 1 pane per window.
+- Always run `npm install` with sandbox disabled.
+- Note that you're running in sandbox mode; if you get an unexpected error upon trying a command, it's usually because you need to disable the sandbox for that command.
 - Use uv for all python-related operations; `uv add` to install new packages, and `uv run file.py` to run files. No need to activate the venv first.
 - When committing, follow conventional commits (`fix:`, `feat:`, `chore:`, `ci:`, `docs:`, `refactor:`, `test:`). A scope may added in parentheses for additional context (e.g. `feat(parser):` ). Commit messages should be a single sentence and relatively concise.
 
